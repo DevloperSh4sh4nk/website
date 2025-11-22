@@ -1,0 +1,122 @@
+/* Logo Styles */
+.logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    height: 80px; /* Fixed height for the logo container */
+    gap: 15px;
+}
+
+.logo-img {
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.school-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.school-name h1 {
+    color: #2c3e50;
+    font-size: 1.6rem;
+    margin: 0;
+    line-height: 1.2;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.school-name p {
+    color: #6c63ff;
+    font-size: 0.9rem;
+    margin: 3px 0 0;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Hide the old text-based logo */
+.logo-icon, .logo-text {
+    display: none;
+}
+
+/* Responsive Logo */
+@media (max-width: 1200px) {
+    .school-name h1 {
+        font-size: 1.4rem;
+    }
+    
+    .school-name p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .logo-container {
+        height: 70px;
+    }
+    
+    .school-name h1 {
+        font-size: 1.3rem;
+    }
+    
+    .school-name p {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-container {
+        height: 60px;
+    }
+    
+    .school-name h1 {
+        font-size: 1.1rem;
+    }
+    
+    .school-name p {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .school-name {
+        display: none; /* Hide school name on very small screens */
+    }
+    
+    .logo-container {
+        padding: 5px 0;
+    }
+}
+
+/* Sticky Header */
+.header.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    animation: slideDown 0.5s ease;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Logo in Sticky Header */
+.header.sticky .logo-container {
+    height: 60px;
+    transition: height 0.3s ease;
+}

@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum - Wisdom School, Roorkee</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Curriculum Page Styles */
+        .curriculum-hero {
+            background: linear-gradient(135deg, #4a45b1 0%, #6c63ff 100%);
+            color: var(--white);
+            padding: 180px 0 80px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .curriculum-container {
+            padding: 80px 0;
+        }
+        
+        .grade-section {
+            margin-bottom: 60px;
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .grade-header {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+        
+        .grade-header:hover {
+            background: var(--secondary-color);
+        }
+        
+        .grade-header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        
+        .grade-header i {
+            transition: var(--transition);
+        }
+        
+        .grade-header.active i {
+            transform: rotate(180deg);
+        }
+        
+        .grade-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+        
+        .grade-content.active {
+            padding: 2rem;
+            max-height: 5000px;
+        }
+        
+        .curriculum-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .curriculum-card {
+            background: var(--light-gray);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .curriculum-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .curriculum-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .curriculum-card h3 i {
+            font-size: 1.2rem;
+        }
+        
+        .curriculum-card ul {
+            padding-left: 1.2rem;
+        }
+        
+        .curriculum-card li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .curriculum-card li:before {
+            content: '•';
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .ai-tools {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+        
+        .ai-tools h4 {
+            color: var(--dark-gray);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .ai-tools h4 i {
+            color: var(--primary-color);
+        }
+        
+        .ai-tools .tools-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .ai-tools .tool-tag {
+            background: rgba(108, 99, 255, 0.1);
+            color: var(--primary-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .curriculum-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+        
+        .curriculum-intro h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .curriculum-intro p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+        
+        .highlight-box {
+            background: rgba(108, 99, 255, 0.1);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 2rem 0;
+        }
+        
+        .highlight-box h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .curriculum-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .grade-content.active {
+                padding: 1.5rem;
+            }
+            
+            .curriculum-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Wisdom School</h1>
+                <p>Roorkee | ICSE Affiliated | Girls School</p>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="curriculum.html" class="active">Curriculum</a></li>
+                    <li><a href="admissions.html">Admissions</a></li>
+                    <li><a href="contact.html" class="cta-button">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="curriculum-hero">
+        <div class="container">
+            <h1>Our Curriculum</h1>
+            <p>ICSE Board + Wisdom AI Super-Curriculum</p>
+        </div>
+    </section>
+
+    <!-- Curriculum Content -->
+    <section class="curriculum-container">
+        <div class="container">
+            <div class="curriculum-intro">
+                <h2>Year-Wise AI + English + Foreign Language Curriculum</h2>
+                <p>Our unique curriculum combines the best of ICSE education with cutting-edge AI and language learning, preparing our students to be global leaders in technology and communication.</p>
+                
+                <div class="highlight-box">
+                    <h3>School Timings</h3>
+                    <p><strong>Monday – Friday:</strong> 7:50 AM – 3:50 PM</p>
+                    <p>4 periods AI & Coding | 3 periods English & Communication | 1 period chosen foreign language | 1 period project/entrepreneurship</p>
+                    <p><strong>Saturday (Innovation Day):</strong> 8:00 AM – 1:00 PM</p>
+                    <p>Hackathons, startup mentoring, live sales, guest sessions with women AI founders</p>
+                </div>
+            </div>
+            
+            <!-- Pre-Nursery & Nursery -->
+            <div class="grade-section">
+                <div class="grade-header">
+                    <h2>Pre-Nursery & Nursery (Age 3–4)</h2>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="grade-content">
+                    <div class="curriculum-grid">
+                        <div class="curriculum-card">
+                            <h3><i class="fas fa-language"></i> English</h3>
+                            <ul>
+                                <li>100% Jolly Phonics + AI speech recognition app (Elsa Speak + custom Wisdom AI coach)</li>
+                                <li>Perfect British pronunciation from day one</li>
+                                <li>Recognize 100+ AI-generated images</li>
+                            </ul>
+                            
+                            <div class="ai-tools">
+                                <h4><i class="fas fa-robot"></i> AI Tools</h4>
+                                <div class="tools-list">
+                                    <span class="tool-tag">Osmo Coding Awbie</span>
+                                    <span class="tool-tag">AI storytelling tablets</span>
+                                    <span class="tool-tag">Dash & Dot robots</span>
+                                    <span class="tool-tag">Elsa Speak</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="curriculum-card">
+                            <h3><i class="fas fa-brain"></i> AI & Technology</h3>
+                            <ul>
+                                <li>Introduction to basic logic and sequencing</li>
+                                <li>Interactive AI-powered learning games</li>
+                                <li>Simple robotics with visual programming</li>
+                            </ul>
+                            
+                            <h3 style="margin-top: 1.5rem;"><i class="fas fa-globe-africa"></i> Foreign Language</h3>
+                            <ul>
+                                <li>Daily 20-minute Arabic/French/German rhymes</li>
+                                <li>AI cartoon stories with interactive elements</li>
+                                <li>Basic vocabulary through play</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- LKG & UKG -->
+            <div class="grade-section">
+                <div class="grade-header">
+                    <h2>LKG & UKG (Age 4–6)</h2>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="grade-content">
+                    <div class="curriculum-grid">
+                        <div class="curriculum-card">
+                            <h3><i class="fas fa-language"></i> English</h3>
+                            <ul>
+                                <li>Jolly Grammar 1–2 curriculum</li>
+                                <li>AI-powered dictation exercises</li>
+                                <li>Daily storytelling sessions with interactive elements</li>
+                                <li>Building full English sentences</li>
+                            </ul>
+                            
+                            <div class="ai-tools">
+                                <h4><i class="fas fa-robot"></i> AI Tools</h4>
+                                <div class="tools-list">
+                                    <span class="tool-tag">Scratch Jr</span>
+                                    <span class="tool-tag">Code.org</span>
+                                    <span class="tool-tag">LEGO WeDo 2.0</span>
+                                    <span class="tool-tag">Google Magenta Kids</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="curriculum-card">
+                            <h3><i class="fas fa-brain"></i> AI & Technology</h3>
+                            <ul>
+                                <li>Building simple animated stories</li>
+                                <li>Introduction to block-based coding</li>
+                                <li>Controlling robots with code</li>
+                                <li>Basic music creation with AI</li>
+                            </ul>
+                            
+                            <h3 style="margin-top: 1.5rem;"><i class="fas fa-globe-africa"></i> Foreign Language</h3>
+                            <ul>
+                                <li>30-minute daily language class</li>
+                                <li>Duolingo Kids integration</li>
+                                <li>AI conversation bot practice</li>
+                                <li>Interactive language games</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Class 1-2 -->
+            <div class="grade-section">
+                <div class="grade-header">
+                    <h2>Class 1–2 (Age 6–8)</h2>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="grade-content">
+                    <div class="curriculum-grid">
+                        <div class="curriculum-card">
+                            <h3><i class="fas fa-language"></i> English</h3>
+                            <ul>
+                                <li>Cambridge Primary English Stage 1–2</li>
+                                <li>Wren & Martin basics</li>
+                                <li>Reading comprehension</li>
+                                <li>Basic creative writing</li>
+                            </ul>
+                            
+                            <div class="ai-tools">
+                                <h4><i class="fas fa-robot"></i> AI Tools</h4>
+                                <div class="tools-list">
+                                    <span class="tool-tag">Scratch 3.0</span>
+                                    <span class="tool-tag">Minecraft Education</span>
+                                    <span class="tool-tag">Tynker</span>
+                                    <span class="tool-tag">Sphero robots</span>
+                                    <span class="tool-tag">Google QuickDraw AI</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="curriculum-card">
+                            <h3><i class="fas fa-brain"></i> AI & Technology</h3>
+                            <ul>
+                                <li>Create interactive games and stories</li>
+                                <li>Introduction to AI art creation</li>
+                                <li>Basic Python "turtle" graphics</li>
+                                <li>Simple robotics programming</li>
+                            </ul>
+                            
+                            <h3 style="margin-top: 1.5rem;"><i class="fas fa-project-diagram"></i> Projects</h3>
+                            <ul>
+                                <li>Build talking storybooks</li>
+                                <li>Create AI drawing games</li>
+                                <li>Interactive presentations</li>
+                            </ul>
+                            
+                            <h3 style="margin-top: 1.5rem;"><i class="fas fa-globe-africa"></i> Foreign Language</h3>
+                            <ul>
+                                <li>45-minute daily classes</li>
+                                <li>Rosetta Stone Junior</li>
+                                <li>Native teacher instruction</li>
+                                <li>Interactive language labs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Class 3-4 -->
+            <div class="grade-section">
+                <div class="grade-header">
+                    <h2>Class 3–4 (Age 8–10)</h2>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="grade-content">
+                    <div class="curriculum-grid">
+                        <div class="curriculum-card">
+                            <h3><i class="fas fa-language"></i> English</h3>
+                            <ul>
+                                <li>Cambridge Checkpoint preparation</li>
+                                <li>Advanced creative writing</li>
+                                <li>Weekly debates and presentations</li>
+                                <li>Public speaking training</li>
+                            </ul>
+                            
+                            <div class="ai-tools">
+                                <h4><i class="fas fa-robot"></i> AI Tools</h4>
+                                <div class="tools-list">
+                                    <span class="tool-tag">Python (Trinket/Replit)</span>
+                                    <span class="tool-tag">ChatGPT (school-safe)</span>
+                                    <span class="tool-tag">Canva Magic Studio</span>
+                                    <span class="tool-tag">LEGO Spike Prime</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="curriculum-card">
+                            <h3><i class="fas fa-brain"></i> AI & Technology</h3>
+                            <ul>
+                                <li>Write real Python programs</li>
+                                <li>Use ChatGPT for creative writing and problem-solving</li>
+                                <li>Generate AI art and designs</li>
+                                <li>Build voice assistants and chatbots</li>
+                                <li>Develop simple websites</li>
+                            </ul>
+                            
+                            <h3 style="margin-top: 1.5rem;"><i class="fas fa-project-diagram"></i> Projects</h3>
+                            <ul>
+                                <li>Personal AI homework helper</li>
+                                <li>AI greeting card shop on Instagram</li>
+                                <li>Interactive storytelling with AI</li>
+                            </ul>
+                            
+                            <h3 style="margin-top: 1.5rem;"><i class="fas fa-globe-africa"></i> Foreign Language</h3>
+                            <ul>
+                                <li>Grammar and conversation</li>
+                                <li>Project-based learning</li>
+                                <li>Cultural immersion activities</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Class 5 -->
+            <div class="grade-section">
+                <div class="grade-header">
+                    <h2>Class 5 (Age 10–11)</h2>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="grade-content">
+                    <div class="curriculum-grid">
+                        <div class="curriculum-card">
+                            <h3><i class="fas fa-language"></i> English</h3>
+                            <ul>
+                                <li>ICSE-level comprehension</li>
+                                <li>Advanced essay and letter writing</li>
+                                <li>Podcast recording and production</li>
+                                <li>Creative writing workshops</li>
+                            </ul>
+                            
+                            <div class="ai-tools">
+                                <h4><i class="fas fa-robot"></i> AI Tools</h4>
+                                <div class="tools-list">
+                                    <span class="tool-tag">Replit</span>
+                                    <span class="tool-tag">GitHub</span>
+                                    <span class="tool-tag">Midjourney (school account)</span>
+                                    <span class="tool-tag">Runway ML</span>
+                                    <span class="tool-tag">ElevenLabs voice cloning</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="curriculum-card">
+                            <h3><i class="fas fa-brain"></i> AI & Technology</h3>
+                            <ul>
+                                <li>Build complete AI-powered websites</li>
+                                <li>Generate and sell AI art and stickers</li>
+                                <li>Create faceless YouTube channels using AI</li>
+                                <li>Launch and manage Shopify stores</li>
+                                <li>Basic video editing with AI tools</li>
+                            </ul>
+                            
+                            <h3 style="margin-top: 1.5rem;"><i class="fas fa-coins"></i> Real Earnings</h3>
+                            <p>Most girls earn ₹10,000–₹40,000 per month from AI products and services they create.</p>
+                            
+                            <h3 style="margin-top: 1.5rem;"><i class="fas fa-globe-africa"></i> Foreign Language</h3>
+                            <ul>
+                                <li>Prepare for Cambridge/French DELF A1–A2 or Goethe A1–A2</li>
+                                <li>Conversational fluency</li>
+                                <li>Writing and reading comprehension</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Class 6-7 -->
+            <div class="grade-section">
+                <div class="grade-header">
+                    <h2>Class 6–7 (Age 11–13)</h2>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="grade-content">
+                    <div class="curriculum-grid">
+                        <div class="curriculum-card">
+                            <h3><i class="fas fa-language"></i> English</h3>
+                            <ul>
+                                <li>Full ICSE curriculum</li>
+                                <li>TED-style public speaking</li>
+                                <li>Model United Nations (MUN) participation</li>
+                                <li>Debate competitions</li>
+                                <li>Creative and technical writing</li>
+                            </ul>
+                            
+                            <div class="ai-tools">
+                                <h4><i class="fas fa-robot"></i> AI Tools</h4>
+                                <div class="tools-list">
+                                    <span class="tool-tag">Google Colab</span>
+                                    <span class="tool-tag">TensorFlow Kids</span>
+                                    <span class="tool-tag">Stable Diffusion</span>
+                                    <span class="tool-tag">Claude AI</span>
+                                    <span class="tool-tag">Gemini</span>
+                                    <span class="tool-tag">Luma AI video</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="curriculum-card">
+                            <h3><i class="fas fa-brain"></i> AI & Technology</h3>
+                            <ul>
+                                <li>Machine Learning basics</li>
+                                <li>Train simple AI models</li>
+                                <li>Build & sell custom GPTs on GPT Store</li>
+                                <li>Create AI automation tools for businesses</li>
+                                <li>Computer Vision projects (face/emotion detection)</li>
+                                <li>Basic app development</li>
+                            </ul>
+                            
+                            <h3 style="margin-top: 1.5rem;"><i class="fas fa-coins"></i> Real Earnings</h3>
+                            <p>Students typically earn ₹50,000–₹2 lakh+ per month from their AI projects and businesses.</p>
+                            
+                            <h3 style="margin-top: 1.5rem;"><i class="fas fa-globe-africa"></i> Foreign Language</h3>
+                            <ul>
+                                <li>DELF B1 / Goethe B1 / Arabic Level 3 preparation</li>
+                                <li>Business language skills</li>
+                                <li>Advanced conversation and composition</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Class 8 -->
+            <div class="grade-section">
+                <div class="grade-header">
+                    <h2>Class 8 (Age 13–14)</h2>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="grade-content">
+                    <div class="curriculum-grid">
+                        <div class="curriculum-card">
+                            <h3><i class="fas fa-language"></i> English</h3>
+                            <ul>
+                                <li>IELTS 7.5–8.5 band level preparation</li>
+                                <li>Professional podcast production</li>
+                                <li>YouTube channel management</li>
+                                <li>Professional writing and communication</li>
+                                <li>Advanced public speaking</li>
+                            </ul>
+                            
+                            <div class="ai-tools">
+                                <h4><i class="fas fa-robot"></i> Professional Stack</h4>
+                                <div class="tools-list">
+                                    <span class="tool-tag">GitHub</span>
+                                    <span class="tool-tag">Vercel</span>
+                                    <span class="tool-tag">Hugging Face</span>
+                                    <span class="tool-tag">LangChain</span>
+                                    <span class="tool-tag">Cursor AI coding</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="curriculum-card">
+                            <h3><i class="fas fa-brain"></i> AI & Technology</h3>
+                            <ul>
+                                <li>Build production-level AI applications</li>
+                                <li>Launch and scale real startups</li>
+                                <li>AI + Blockchain integration</li>
+                                <li>Advanced web development</li>
+                                <li>Cloud computing and deployment</li>
+                            </ul>
+                            
+                            <h3 style="margin-top: 1.5rem;"><i class="fas fa-briefcase"></i> Professional Development</h3>
+                            <ul>
+                                <li>Remote internships with Indian AI startups</li>
+                                <li>Mentorship from industry leaders</li>
+                                <li>Startup incubation program</li>
+                                <li>Investor pitch training</li>
+                            </ul>
+                            
+                            <h3 style="margin-top: 1.5rem;"><i class="fas fa-trophy"></i> Portfolio by Class 8</h3>
+                            <ul>
+                                <li>Live earning AI businesses</li>
+                                <li>GitHub with 50+ projects</li>
+                                <li>IELTS 8+ band certification</li>
+                                <li>Foreign language certification</li>
+                                <li>Direct entry offers from top ICSE schools</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="highlight-box" style="margin-top: 4rem;">
+                <h3>World-Class Facilities</h3>
+                <ul style="columns: 2; list-style-type: none; padding: 0;">
+                    <li>✓ Robotics & Generative AI Super Lab (50+ robots, RTX workstations)</li>
+                    <li>✓ Professional English Recording Studio & Theatre</li>
+                    <li>✓ Arabic, French & German Immersion Labs with native teachers</li>
+                    <li>✓ Startup Incubator Room (every girl gets her own desk + MacBook from Class 6)</li>
+                    <li>✓ 100% safe, green, girls-only campus with 24×7 woman staff</li>
+                    <li>✓ Limited to only 25 girls per class | Total strength 225 girls only</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Limited Seats Available for 2026-27</h2>
+            <p>Give your daughter the most unfair advantage in the world today.</p>
+            <a href="contact.html" class="btn btn-primary">Book Assessment</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-phone"></i> +91 XXXXXXXXXX</p>
+                    <p><i class="fas fa-envelope"></i> admissions@wisdomschool.edu.in</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Roorkee, Uttarakhand, India</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="curriculum.html">Curriculum</a></li>
+                        <li><a href="admissions.html">Admissions</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Wisdom School, Roorkee. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Accordion functionality for grade sections
+        document.addEventListener('DOMContentLoaded', function() {
+            const gradeHeaders = document.querySelectorAll('.grade-header');
+            
+            gradeHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const content = this.nextElementSibling;
+                    
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                        content.classList.remove('active');
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        content.classList.add('active');
+                    }
+                });
+                
+                // Open first grade by default
+                if (header.parentElement.classList.contains('grade-section') && 
+                    header.parentElement.querySelector('.grade-content')) {
+                    header.click();
+                    return; // Only open the first one
+                }
+            });
+        });
+    </script>
+</body>
+</html>
