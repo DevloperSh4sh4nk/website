@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wisdom School, Roorkee - India's First AI & English Grammar Girls School</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="logo.css">
     <link rel="stylesheet" href="gallery.css">
-    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="gallery.css">
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
@@ -32,15 +35,6 @@
                 </ul>
             </nav>
             <div class="header-actions">
-                <label class="theme-switch">
-                    <input type="checkbox" id="theme-toggle">
-                    <span class="slider round">
-                        <span class="slider-icon">
-                            <i class="fas fa-moon"></i>
-                            <i class="fas fa-sun"></i>
-                        </span>
-                    </span>
-                </label>
                 <div class="mobile-menu-btn">
                     <i class="fas fa-bars"></i>
                 </div>
@@ -52,11 +46,14 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>India's First AI & English Grammar Girls School</h1>
+                <span class="hero-tag">India's Premimum Girls School</span>
+                <h1>Empowering the Next Generation of <span>Female AI Leaders</span></h1>
+                <p>Join India's first school dedicated to mastering AI, prompt engineering, and digital entrepreneurship
+                    from a young age.</p>
                 <div class="cta-buttons">
-                    <a href="admissions.html" class="btn btn-primary">Apply Now</a>
-                    <a href="#virtual-tour" class="btn btn-secondary">Virtual Tour</a>
-                    <a href="https://wisdomgroupofschool.netlify.app/#home" class="btn btn-secondary" target="_blank" rel="noopener">Explore More</a>
+                    <a href="admissions.html" class="btn btn-primary">Apply for 2026-27 <i class="fas fa-arrow-right"
+                            style="margin-left: 10px;"></i></a>
+                    <a href="#virtual-tour" class="btn btn-secondary">Watch Virtual Tour</a>
                 </div>
             </div>
         </div>
@@ -70,13 +67,9 @@
                 <p>Take a virtual tour of our state-of-the-art campus facilities</p>
             </div>
             <div class="video-container">
-                <iframe 
-                    width="100%" 
-                    height="500" 
-                    src="1474491_Education_People_3840x2160.mp4" 
-                    title="School Virtual Tour" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                <iframe width="100%" height="500" src="1474491_Education_People_3840x2160.mp4"
+                    title="School Virtual Tour" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen>
                 </iframe>
             </div>
@@ -84,24 +77,24 @@
     </section>
 
     <!-- Image Gallery Section -->
-    <section class="gallery-section" id="gallery">
-        <div class="gallery-container">
-            <div class="section-title">
-                <h2>Our School Gallery</h2>
-                <p>Explore the vibrant life at Wisdom School through our photo gallery</p>
+    <section class="gallery-section reveal" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Life at Wisdom School</h2>
+                <p>Explore our state-of-the-art facilities and vibrant student life.</p>
             </div>
-            
-            <div class="gallery-filter">
+
+            <div class="gallery-filter reveal" style="transition-delay: 0.1s;">
                 <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="campus">Campus</button>
                 <button class="filter-btn" data-filter="classroom">Classrooms</button>
                 <button class="filter-btn" data-filter="activities">Activities</button>
                 <button class="filter-btn" data-filter="events">Events</button>
             </div>
-            
+
             <div class="gallery-grid">
                 <!-- Campus Images -->
-                <div class="gallery-item" data-category="campus">
+                <div class="gallery-item reveal" data-category="campus" style="transition-delay: 0.2s;">
                     <img src="Gemini_Generated_Image_qtcicaqtcicaqtci.png" alt="School Building" class="gallery-img">
                     <div class="gallery-overlay">
                         <div class="zoom-icon">
@@ -109,8 +102,8 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="gallery-item" data-category="campus">
+
+                <div class="gallery-item reveal" data-category="campus" style="transition-delay: 0.3s;">
                     <img src="Gemini_Generated_Image_r5fwv7r5fwv7r5fw.png" alt="School Playground" class="gallery-img">
                     <div class="gallery-overlay">
                         <div class="zoom-icon">
@@ -118,9 +111,9 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Classroom Images -->
-                <div class="gallery-item" data-category="classroom">
+                <div class="gallery-item reveal" data-category="classroom" style="transition-delay: 0.4s;">
                     <img src="Gemini_Generated_Image_iftjh3iftjh3iftj.png" alt="Modern Classroom" class="gallery-img">
                     <div class="gallery-overlay">
                         <div class="zoom-icon">
@@ -128,47 +121,52 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="gallery-item" data-category="classroom">
-                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Computer Lab" class="gallery-img">
+
+                <div class="gallery-item reveal" data-category="classroom" style="transition-delay: 0.5s;">
+                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Computer Lab" class="gallery-img">
                     <div class="gallery-overlay">
                         <div class="zoom-icon">
                             <i class="fas fa-search-plus"></i>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Activities -->
-                <div class="gallery-item" data-category="activities">
-                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Science Fair" class="gallery-img">
+                <div class="gallery-item reveal" data-category="activities" style="transition-delay: 0.6s;">
+                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Science Fair" class="gallery-img">
                     <div class="gallery-overlay">
                         <div class="zoom-icon">
                             <i class="fas fa-search-plus"></i>
                         </div>
                     </div>
                 </div>
-                
-                <div class="gallery-item" data-category="activities">
-                    <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" alt="Art Class" class="gallery-img">
+
+                <div class="gallery-item reveal" data-category="activities" style="transition-delay: 0.7s;">
+                    <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80"
+                        alt="Art Class" class="gallery-img">
                     <div class="gallery-overlay">
                         <div class="zoom-icon">
                             <i class="fas fa-search-plus"></i>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Events -->
-                <div class="gallery-item" data-category="events">
-                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Annual Day" class="gallery-img">
+                <div class="gallery-item reveal" data-category="events" style="transition-delay: 0.8s;">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Annual Day" class="gallery-img">
                     <div class="gallery-overlay">
                         <div class="zoom-icon">
                             <i class="fas fa-search-plus"></i>
                         </div>
                     </div>
                 </div>
-                
-                <div class="gallery-item" data-category="events">
-                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Sports Day" class="gallery-img">
+
+                <div class="gallery-item reveal" data-category="events" style="transition-delay: 0.9s;">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Sports Day" class="gallery-img">
                     <div class="gallery-overlay">
                         <div class="zoom-icon">
                             <i class="fas fa-search-plus"></i>
@@ -177,49 +175,57 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Image Modal -->
         <div id="imageModal" class="modal">
             <span class="close">&times;</span>
             <img class="modal-content" id="modalImage">
         </div>
     </section>
-    
+
     <!-- Features Section -->
     <section class="features">
         <div class="container">
-            <h2 class="section-title">Why Choose Wisdom School?</h2>
+            <div class="section-header reveal">
+                <h2 class="section-title">Why Choose Wisdom School?</h2>
+                <p>We provide a future-ready ecosystem where technology meets personalized learning.</p>
+            </div>
             <div class="features-grid">
-                <div class="feature-card">
+                <div class="feature-card reveal" style="transition-delay: 0.1s;">
                     <i class="fas fa-robot"></i>
-                    <h3>AI-First Education</h3>
-                    <p>Integrated AI curriculum from Pre-Nursery to Class 8, preparing students for the future.</p>
+                    <h3>AI-First Mastery</h3>
+                    <p>Beyond basic literacy: Students master prompt engineering, AI ethics, and digital creation from
+                        Pre-Nursery to Class 8.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card reveal" style="transition-delay: 0.2s;">
                     <i class="fas fa-language"></i>
                     <h3>Global English</h3>
-                    <p>Perfect London-accent English with IELTS 8+ band level by Class 8.</p>
+                    <p>Achieve near-native fluency and exceptional articulation, targeting IELTS 8+ proficiency by Class
+                        8.</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-globe"></i>
-                    <h3>Foreign Languages</h3>
-                    <p>Choose from Arabic, French, or German with native-speaking teachers.</p>
-                </div>
-                <div class="feature-card">
+                <div class="feature-card reveal" style="transition-delay: 0.3s;">
                     <i class="fas fa-graduation-cap"></i>
                     <h3>ICSE Curriculum</h3>
-                    <p>ICSE-affiliated education with advanced AI and technology integration.</p>
+                    <p>A globally recognized academic framework combined with rigorous analytical thinking and
+                        tech-forward learning.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Call to Action -->
-    <section class="cta-section">
+    <section class="cta-section reveal">
         <div class="container">
-            <h2>Limited Seats Available for 2026-27</h2>
-            <p>Only 25 girls per class. Secure your daughter's future today.</p>
-            <a href="contact.html" class="btn btn-primary">Book Assessment</a>
+            <h2>Empowering Her to Lead the Digital Age.</h2>
+            <p>An AI-first education with just 25 girls per class, ensuring your daughter receives the personalized
+                attention she deserves to bridge the tech gap.</p>
+            <div class="cta-buttons reveal" style="transition-delay: 0.2s;">
+                <div class="btn-wrapper">
+                    <a href="contact.html" class="btn btn-primary"
+                        style="background: white; color: var(--primary-color);">Book Assessment <i
+                            class="fas fa-calendar-check" style="margin-left:8px;"></i></a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -227,145 +233,49 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
+                <div class="footer-section brand">
+                    <img src="WISDOM GROUP OF SCHOOL (2).png" alt="Wisdom School"
+                        style="height: 60px; margin-bottom: 20px;">
+                    <p>India's First AI & English Grammar Girls School. Shaping the leaders of tomorrow with technology
+                        and excellence.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
                 <div class="footer-section">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-phone"></i> +91 XXXXXXXXXX</p>
-                    <p><i class="fas fa-envelope"></i> admissions@wisdomschool.edu.in</p>
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-phone"></i> +91 96392 38027</p>
+                    <p><i class="fas fa-envelope"></i> info@jfknowledge.com
+                    </p>
                     <p><i class="fas fa-map-marker-alt"></i> Roorkee, Uttarakhand, India</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Quick Links</h3>
+                    <h3>Useful Links</h3>
                     <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="curriculum.html">Curriculum</a></li>
-                        <li><a href="admissions.html">Admissions</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="about.html">About Our Mission</a></li>
+                        <li><a href="curriculum.html">Academic Program</a></li>
+                        <li><a href="admissions.html">Admission Policy</a></li>
+                        <li><a href="contact.html">Get in Touch</a></li>
                     </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Follow Us</h3>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Wisdom School, Roorkee. All Rights Reserved.</p>
+                <p>&copy; 2025 Wisdom School, Roorkee. All Rights Reserved. <span style="margin-left: 20px;">Designed
+                        with excellence.</span></p>
             </div>
         </div>
     </footer>
 
-    <script src="main.js"></script>
-    <script src="theme.js"></script>
     <!-- WhatsApp Chat Button -->
-    <a href="https://wa.me/919999999999" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/9639238027" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <style>
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 3px #999;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            animation: pulse 1.5s infinite;
-        }
-
-        .whatsapp-float:hover {
-            background-color: #128C7E;
-            transform: scale(1.1);
-            text-decoration: none;
-            color: #FFF;
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-        }
-    </style>
-
-    <script>
-        // Sticky Header
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('.header');
-            header.classList.toggle('sticky', window.scrollY > 100);
-        });
-        
-        // Image Gallery Filter
-        document.addEventListener('DOMContentLoaded', function() {
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const galleryItems = document.querySelectorAll('.gallery-item');
-            
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    // Remove active class from all buttons
-                    filterBtns.forEach(btn => btn.classList.remove('active'));
-                    // Add active class to clicked button
-                    this.classList.add('active');
-                    
-                    const filter = this.getAttribute('data-filter');
-                    
-                    galleryItems.forEach(item => {
-                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                            item.style.display = 'block';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-                });
-            });
-            
-            // Image Modal
-            const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('modalImage');
-            const closeBtn = document.querySelector('.close');
-            
-            document.querySelectorAll('.gallery-img').forEach(img => {
-                img.addEventListener('click', function() {
-                    modal.style.display = 'flex';
-                    modalImg.src = this.src;
-                    document.body.style.overflow = 'hidden';
-                    setTimeout(() => {
-                        modal.style.opacity = '1';
-                    }, 10);
-                });
-            });
-            
-            closeBtn.addEventListener('click', function() {
-                modal.style.opacity = '0';
-                setTimeout(() => {
-                    modal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }, 300);
-            });
-            
-            // Close modal when clicking outside the image
-            window.addEventListener('click', function(event) {
-                if (event.target === modal) {
-                    modal.style.opacity = '0';
-                    setTimeout(() => {
-                        modal.style.display = 'none';
-                        document.body.style.overflow = 'auto';
-                    }, 300);
-                }
-            });
-        });
-    </script>
+    <!-- Scripts -->
+    <script src="main.js"></script>
 </body>
+
 </html>

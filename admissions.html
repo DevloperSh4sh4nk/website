@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admissions - Wisdom School, Roorkee</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
         /* Admissions Page Styles */
@@ -16,18 +18,18 @@
             text-align: center;
             position: relative;
         }
-        
+
         .admissions-container {
             padding: 80px 0;
         }
-        
+
         .admission-steps {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin: 3rem 0;
         }
-        
+
         .step-card {
             background: var(--white);
             border-radius: 10px;
@@ -38,12 +40,12 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .step-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
-        
+
         .step-number {
             width: 50px;
             height: 50px;
@@ -59,44 +61,44 @@
             position: relative;
             z-index: 1;
         }
-        
+
         .step-card h3 {
             color: var(--primary-color);
             margin-bottom: 1rem;
         }
-        
+
         .step-card p {
             color: #555;
             margin-bottom: 1.5rem;
         }
-        
+
         .step-card .icon {
             font-size: 2.5rem;
             color: var(--primary-color);
             margin-bottom: 1.5rem;
             display: block;
         }
-        
+
         .info-section {
             background: var(--light-gray);
             padding: 60px 0;
             margin: 60px 0;
         }
-        
+
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
-        
+
         .info-card {
             background: var(--white);
             border-radius: 10px;
             padding: 2rem;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-        
+
         .info-card h3 {
             color: var(--primary-color);
             margin-bottom: 1.5rem;
@@ -104,21 +106,21 @@
             align-items: center;
             gap: 0.8rem;
         }
-        
+
         .info-card h3 i {
             font-size: 1.5rem;
         }
-        
+
         .info-card ul {
             padding-left: 1.5rem;
         }
-        
+
         .info-card li {
             margin-bottom: 0.8rem;
             position: relative;
             padding-left: 1.5rem;
         }
-        
+
         .info-card li:before {
             content: '•';
             color: var(--primary-color);
@@ -126,7 +128,7 @@
             position: absolute;
             left: 0;
         }
-        
+
         .admission-form {
             max-width: 800px;
             margin: 0 auto;
@@ -135,18 +137,18 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-        
+
         .form-group {
             margin-bottom: 1.5rem;
         }
-        
+
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 500;
             color: var(--dark-gray);
         }
-        
+
         .form-control {
             width: 100%;
             padding: 0.8rem 1rem;
@@ -156,30 +158,30 @@
             font-size: 1rem;
             transition: var(--transition);
         }
-        
+
         .form-control:focus {
             border-color: var(--primary-color);
             box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
             outline: none;
         }
-        
+
         textarea.form-control {
             min-height: 120px;
             resize: vertical;
         }
-        
+
         .form-row {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
             margin-bottom: 1.5rem;
         }
-        
+
         .form-actions {
             text-align: center;
             margin-top: 2rem;
         }
-        
+
         .btn-submit {
             background: var(--primary-color);
             color: white;
@@ -191,24 +193,24 @@
             transition: var(--transition);
             font-weight: 500;
         }
-        
+
         .btn-submit:hover {
             background: var(--secondary-color);
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        
+
         .faq-section {
             margin: 60px 0;
         }
-        
+
         .faq-item {
             margin-bottom: 1.5rem;
             border: 1px solid #eee;
             border-radius: 8px;
             overflow: hidden;
         }
-        
+
         .faq-question {
             background: var(--white);
             padding: 1.5rem;
@@ -219,24 +221,24 @@
             font-weight: 500;
             transition: var(--transition);
         }
-        
+
         .faq-question:hover {
             background: #f9f9f9;
         }
-        
+
         .faq-question i {
             transition: var(--transition);
         }
-        
+
         .faq-question.active {
             background: var(--primary-color);
             color: white;
         }
-        
+
         .faq-question.active i {
             transform: rotate(180deg);
         }
-        
+
         .faq-answer {
             padding: 0 1.5rem;
             max-height: 0;
@@ -244,25 +246,25 @@
             transition: max-height 0.3s ease-out, padding 0.3s ease;
             background: var(--light-gray);
         }
-        
+
         .faq-answer.active {
             padding: 1.5rem;
             max-height: 1000px;
         }
-        
+
         .testimonial-section {
             background: var(--light-gray);
             padding: 60px 0;
             margin: 60px 0;
         }
-        
+
         .testimonials {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
-        
+
         .testimonial-card {
             background: var(--white);
             padding: 2rem;
@@ -270,7 +272,7 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             position: relative;
         }
-        
+
         .testimonial-text {
             font-style: italic;
             margin-bottom: 1.5rem;
@@ -278,7 +280,7 @@
             position: relative;
             padding-left: 1.5rem;
         }
-        
+
         .testimonial-text:before {
             content: '"';
             font-family: Georgia, serif;
@@ -290,12 +292,12 @@
             top: -1.5rem;
             line-height: 1;
         }
-        
+
         .testimonial-author {
             display: flex;
             align-items: center;
         }
-        
+
         .author-img {
             width: 50px;
             height: 50px;
@@ -303,34 +305,34 @@
             overflow: hidden;
             margin-right: 1rem;
         }
-        
+
         .author-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        
+
         .author-info h4 {
             margin: 0;
             color: var(--dark-gray);
             font-size: 1.1rem;
         }
-        
+
         .author-info p {
             margin: 0.2rem 0 0;
             color: #777;
             font-size: 0.9rem;
         }
-        
+
         @media (max-width: 768px) {
             .admissions-hero h1 {
                 font-size: 2rem;
             }
-            
+
             .admission-form {
                 padding: 1.5rem;
             }
-            
+
             .form-row {
                 grid-template-columns: 1fr;
                 gap: 1rem;
@@ -338,6 +340,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
@@ -380,30 +383,35 @@
                 <h2>Why Choose Wisdom School for Your Daughter?</h2>
                 <p>Limited to only 25 girls per class | Total strength 225 girls only</p>
             </div>
-            
+
             <div class="admission-steps">
                 <div class="step-card">
                     <div class="step-number">1</div>
                     <div class="icon"><i class="fas fa-laptop-code"></i></div>
                     <h3>AI-First Education</h3>
-                    <p>From age 3, your daughter will learn to code, build AI tools, and develop future-ready skills that most students don't encounter until college.</p>
+                    <p>From age 3, students will learn coding, build AI tools, and develop future-ready skills that most
+                        learners don’t encounter until college.</p>
                 </div>
-                
+
                 <div class="step-card">
                     <div class="step-number">2</div>
                     <div class="icon"><i class="fas fa-graduation-cap"></i></div>
                     <h3>Global Opportunities</h3>
-                    <p>With IELTS 8+ band level by Class 8 and fluency in a foreign language, our students are prepared for global universities and careers.</p>
+                    <p>With an IELTS band score of 8+ by Class 8 and fluency in a foreign language, students are well
+                        prepared for global universities and international careers.
+                    </p>
                 </div>
-                
+
                 <div class="step-card">
                     <div class="step-number">3</div>
                     <div class="icon"><i class="fas fa-hand-holding-usd"></i></div>
                     <h3>Earn While Learning</h3>
-                    <p>Our students earn ₹10,000–₹2 lakh+ per month through their AI projects before they even finish middle school.</p>
+                    <p>Our students earn between ₹10,000 and ₹2 lakh+ per month through their AI projects, even before
+                        finishing middle school.
+                    </p>
                 </div>
             </div>
-            
+
             <div class="info-section">
                 <div class="container">
                     <h2 class="section-title">Admission Process</h2>
@@ -419,7 +427,7 @@
                                 <li>Results: Within 48 hours of interview</li>
                             </ul>
                         </div>
-                        
+
                         <div class="info-card">
                             <h3><i class="fas fa-file-alt"></i> Required Documents</h3>
                             <ul>
@@ -432,7 +440,7 @@
                                 <li>Medical Certificate (format provided)</li>
                             </ul>
                         </div>
-                        
+
                         <div class="info-card">
                             <h3><i class="fas fa-money-bill-wave"></i> Fee Structure</h3>
                             <ul>
@@ -448,18 +456,20 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="testimonial-section">
                 <div class="container">
                     <h2 class="section-title">What Parents & Students Say</h2>
                     <div class="testimonials">
                         <div class="testimonial-card">
                             <div class="testimonial-text">
-                                My daughter joined Wisdom School in Class 3, and in just one year, she's already built her first AI chatbot and is earning money through small projects. The transformation in her confidence and skills is remarkable.
+                                My daughter joined Wisdom School in Class 3, and in just one year, she's already built
+                                her first AI chatbot and is earning money through small projects. The transformation in
+                                her confidence and skills is remarkable.
                             </div>
                             <div class="testimonial-author">
                                 <div class="author-img">
-                                    <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Parent">
+                                    <img src="indian_mother.png" alt="Mrs. Sharma - Indian Mother">
                                 </div>
                                 <div class="author-info">
                                     <h4>Mrs. Sharma</h4>
@@ -467,14 +477,16 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="testimonial-card">
                             <div class="testimonial-text">
-                                The AI curriculum at Wisdom School is years ahead of other schools. My daughter is in Class 6 and already understands concepts that I didn't learn until engineering college. The focus on practical, real-world applications is outstanding.
+                                The AI curriculum at Wisdom School is years ahead of other schools. My daughter is in
+                                Class 6 and already understands concepts that I didn't learn until engineering college.
+                                The focus on practical, real-world applications is outstanding.
                             </div>
                             <div class="testimonial-author">
                                 <div class="author-img">
-                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Parent">
+                                    <img src="indian_father.png" alt="Mr. Patel - Indian Father">
                                 </div>
                                 <div class="author-info">
                                     <h4>Mr. Patel</h4>
@@ -482,14 +494,16 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="testimonial-card">
                             <div class="testimonial-text">
-                                I love how Wisdom School combines technology with creativity. I've learned to code, build websites, and even started my own small business. The teachers are amazing and always encourage us to think big.
+                                I love how Wisdom School combines technology with creativity. I've learned to code,
+                                build websites, and even started my own small business. The teachers are amazing and
+                                always encourage us to think big.
                             </div>
                             <div class="testimonial-author">
                                 <div class="author-img">
-                                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Student">
+                                    <img src="indian_student.png" alt="Ananya - Indian Student">
                                 </div>
                                 <div class="author-info">
                                     <h4>Ananya</h4>
@@ -500,7 +514,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div id="apply-now" class="admission-form">
                 <h2 class="section-title" style="text-align: center; margin-bottom: 2rem;">Application Form</h2>
                 <form id="admissionForm">
@@ -514,7 +528,7 @@
                             <input type="date" id="dob" class="form-control" required>
                         </div>
                     </div>
-                    
+
                     <div class="form-row">
                         <div class="form-group">
                             <label for="grade">Grade Applying For*</label>
@@ -539,12 +553,12 @@
                             <input type="text" id="currentSchool" class="form-control">
                         </div>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="address">Residential Address*</label>
                         <textarea id="address" class="form-control" required></textarea>
                     </div>
-                    
+
                     <div class="form-row">
                         <div class="form-group">
                             <label for="city">City*</label>
@@ -555,9 +569,9 @@
                             <input type="text" id="pincode" class="form-control" required>
                         </div>
                     </div>
-                    
+
                     <h3 style="margin: 2rem 0 1rem; color: var(--primary-color);">Parent/Guardian Information</h3>
-                    
+
                     <div class="form-row">
                         <div class="form-group">
                             <label for="fatherName">Father's Name*</label>
@@ -568,7 +582,7 @@
                             <input type="text" id="fatherOccupation" class="form-control">
                         </div>
                     </div>
-                    
+
                     <div class="form-row">
                         <div class="form-group">
                             <label for="motherName">Mother's Name*</label>
@@ -579,7 +593,7 @@
                             <input type="text" id="motherOccupation" class="form-control">
                         </div>
                     </div>
-                    
+
                     <div class="form-row">
                         <div class="form-group">
                             <label for="email">Email Address*</label>
@@ -590,7 +604,7 @@
                             <input type="tel" id="phone" class="form-control" required>
                         </div>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="hearAbout">How did you hear about us?*</label>
                         <select id="hearAbout" class="form-control" required>
@@ -603,60 +617,68 @@
                             <option value="other">Other</option>
                         </select>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="message">Any Additional Information</label>
                         <textarea id="message" class="form-control"></textarea>
                     </div>
-                    
+
                     <div class="form-group" style="margin-top: 2rem;">
                         <div style="display: flex; align-items: flex-start;">
                             <input type="checkbox" id="terms" style="margin-right: 10px; margin-top: 5px;" required>
                             <label for="terms" style="font-size: 0.9rem;">
-                                I certify that the information provided is accurate to the best of my knowledge. I understand that submission of this form does not guarantee admission and is subject to the school's admission criteria and availability of seats.
+                                I certify that the information provided is accurate to the best of my knowledge. I
+                                understand that submission of this form does not guarantee admission and is subject to
+                                the school's admission criteria and availability of seats.
                             </label>
                         </div>
                     </div>
-                    
+
                     <div class="form-actions">
                         <button type="submit" class="btn-submit">Submit Application</button>
                     </div>
                 </form>
             </div>
-            
+
             <div class="faq-section">
                 <h2 class="section-title">Frequently Asked Questions</h2>
-                
+
                 <div class="faq-item">
                     <div class="faq-question">
                         What is the student-teacher ratio at Wisdom School?
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>We maintain an excellent student-teacher ratio of 10:1, with a maximum of 25 students per class. This ensures personalized attention and a better learning experience for each student.</p>
+                        <p>We maintain an excellent student-teacher ratio of 10:1, with a maximum of 25 students per
+                            class. This ensures personalized attention and a better learning experience for each
+                            student.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <div class="faq-question">
                         What are the school timings?
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Our regular school timings are Monday to Friday from 7:50 AM to 3:50 PM. On Saturdays, we have Innovation Day from 8:00 AM to 1:00 PM, which includes hackathons, startup mentoring, and special workshops.</p>
+                        <p>Our regular school timings are Monday to Friday from 7:50 AM to 3:50 PM. On Saturdays, we
+                            have Innovation Day from 8:00 AM to 1:00 PM, which includes hackathons, startup mentoring,
+                            and special workshops.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <div class="faq-question">
                         Do you provide transportation?
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes, we provide safe and reliable transportation services with GPS-enabled buses and trained female attendants. Routes cover all major areas of Roorkee and nearby localities. Transportation fees vary based on distance.</p>
+                        <p>Yes, we provide safe and reliable transportation services with GPS-enabled buses and trained
+                            female attendants. Routes cover all major areas of Roorkee and nearby localities.
+                            Transportation fees vary based on distance.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <div class="faq-question">
                         What is the admission process?
@@ -673,34 +695,41 @@
                         </ol>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <div class="faq-question">
                         Do you offer scholarships?
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes, we offer merit-based scholarships for exceptional students. Scholarships can cover up to 100% of tuition fees based on the entrance test performance and interview. We also have need-based financial aid for deserving students from underprivileged backgrounds.</p>
+                        <p>Yes, we offer merit-based scholarships for exceptional students. Scholarships can cover up to
+                            100% of tuition fees based on the entrance test performance and interview. We also have
+                            need-based financial aid for deserving students from underprivileged backgrounds.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <div class="faq-question">
                         What foreign languages are offered?
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>We offer three foreign language options: French, German, and Arabic. Students can choose one language to specialize in, with daily classes and opportunities to earn international certifications like DELF (French), Goethe-Zertifikat (German), or equivalent for Arabic.</p>
+                        <p>We offer three foreign language options: French, German, and Arabic. Students can choose one
+                            language to specialize in, with daily classes and opportunities to earn international
+                            certifications like DELF (French), Goethe-Zertifikat (German), or equivalent for Arabic.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <div class="faq-question">
                         How is the school handling COVID-19 safety?
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>We follow all government health guidelines, including regular sanitization, mandatory temperature checks, and social distancing measures in classrooms. Our hybrid learning model ensures continuity of education during any disruptions. All staff are fully vaccinated, and we strongly encourage vaccination for all eligible students.</p>
+                        <p>We follow all government health guidelines, including regular sanitization, mandatory
+                            temperature checks, and social distancing measures in classrooms. Our hybrid learning model
+                            ensures continuity of education during any disruptions. All staff are fully vaccinated, and
+                            we strongly encourage vaccination for all eligible students.</p>
                     </div>
                 </div>
             </div>
@@ -721,33 +750,38 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
+                <div class="footer-section brand">
+                    <img src="WISDOM GROUP OF SCHOOL (2).png" alt="Wisdom School"
+                        style="height: 60px; margin-bottom: 20px;">
+                    <p>India's First AI & English Grammar Girls School. Shaping the leaders of tomorrow with technology
+                        and excellence.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
                 <div class="footer-section">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-phone"></i> +91 XXXXXXXXXX</p>
-                    <p><i class="fas fa-envelope"></i> admissions@wisdomschool.edu.in</p>
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-phone"></i> +91 96392 38027</p>
+                    <p><i class="fas fa-envelope"></i> info@jfknowledge.com
+                    </p>
                     <p><i class="fas fa-map-marker-alt"></i> Roorkee, Uttarakhand, India</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Quick Links</h3>
+                    <h3>Useful Links</h3>
                     <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="curriculum.html">Curriculum</a></li>
-                        <li><a href="admissions.html">Admissions</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="about.html">About Our Mission</a></li>
+                        <li><a href="curriculum.html">Academic Program</a></li>
+                        <li><a href="admissions.html">Admission Policy</a></li>
+                        <li><a href="contact.html">Get in Touch</a></li>
                     </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Follow Us</h3>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Wisdom School, Roorkee. All Rights Reserved.</p>
+                <p>&copy; 2025 Wisdom School, Roorkee. All Rights Reserved. <span style="margin-left: 20px;">Designed
+                        with excellence.</span></p>
             </div>
         </div>
     </footer>
@@ -755,15 +789,15 @@
     <script src="main.js"></script>
     <script>
         // FAQ Toggle
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const faqQuestions = document.querySelectorAll('.faq-question');
-            
+
             faqQuestions.forEach(question => {
-                question.addEventListener('click', function() {
+                question.addEventListener('click', function () {
                     this.classList.toggle('active');
                     const answer = this.nextElementSibling;
                     answer.classList.toggle('active');
-                    
+
                     // Close other open FAQs
                     faqQuestions.forEach(item => {
                         if (item !== question) {
@@ -773,11 +807,11 @@
                     });
                 });
             });
-            
+
             // Form submission
             const admissionForm = document.getElementById('admissionForm');
             if (admissionForm) {
-                admissionForm.addEventListener('submit', function(e) {
+                admissionForm.addEventListener('submit', function (e) {
                     e.preventDefault();
                     // Here you would typically send the form data to a server
                     alert('Thank you for your application! We will contact you shortly with the next steps.');
@@ -788,4 +822,5 @@
         });
     </script>
 </body>
+
 </html>
